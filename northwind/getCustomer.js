@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require("../db/pool");
 
 
-router.get("/", async (req, res, next) => {
+router.post("/", async (req, res, next) => {
     const [query, params] = getCustomerQuery(req.body)
 
     try {

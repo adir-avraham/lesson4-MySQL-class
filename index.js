@@ -7,6 +7,10 @@ const app = exprees();
 const getCustomers = require('./northwind/getCustomers');
 const getCustomer = require('./northwind/getCustomer');
 const getCities = require('./northwind/getCities');
+const getShips = require('./northwind/getShips');
+
+
+
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -14,11 +18,11 @@ app.use(bodyParser.json());
 app.use('/getCustomers', getCustomers);
 app.use('/getCustomer', getCustomer);
 app.use('/getCities', getCities);
-
+app.use('/getShips', getShips);
 
 
 app.listen(process.env.PORT, (err) => {
-
+    
     if (err) console.log("There is an error with the server")
     console.log(`App is listening to port: ${process.env.PORT}`)
 }) 
