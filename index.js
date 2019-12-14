@@ -8,7 +8,7 @@ const getCustomers = require('./northwind/getCustomers');
 const getCustomer = require('./northwind/getCustomer');
 const getCities = require('./northwind/getCities');
 const getShips = require('./northwind/getShips');
-
+const getOrders = require('./northwind/getOrders')
 
 
 
@@ -19,7 +19,7 @@ app.use('/getCustomers', getCustomers);
 app.use('/getCustomer', getCustomer);
 app.use('/getCities', getCities);
 app.use('/getShips', getShips);
-
+app.use('/getOrders', getOrders);
 
 app.listen(process.env.PORT, (err) => {
     

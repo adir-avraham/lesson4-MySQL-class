@@ -7,9 +7,9 @@ router.get('/', async (req, res, next)=>{
 
     try {
         const result = await pool.execute(getCustomersQuery())
-        return res.json(result)
+        return res.json(result);
     } catch {
-        return res.json("some error")
+        return res.json("some error");
     }
 })
 
