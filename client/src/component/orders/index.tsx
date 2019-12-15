@@ -51,7 +51,11 @@ function getTableBody(data: any) {
 
 function getTableRow(row: any) {
     return Object.entries(row).map(([key, value], index) => {
-
-        return <td key={"td_" + index}> {value} </td>;
+        if (key === "shipping_fee") return <td key={"td_" + index}> &#xFF04; {value}</td>;
+        if (key === "ship_country_region" && value === "USA") return <td key={"td_" + index}><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1280px-Flag_of_the_United_States.svg.png" width="35px" alt="pic"/></td>;
+        if (key === "payment_type" && value === "Credit Card") return <td key={"td_" + index}> 💳{value}</td>;
+        if (key === "payment_type" && value === "Cash") return <td key={"td_" + index}> 💰{value}</td>;
+        if (key === "payment_type" && value === "Check") return <td key={"td_" + index}> 📝{value}</td>; 
+        return <td key={"td_" + index}> {value}</td>;
     });
 }
